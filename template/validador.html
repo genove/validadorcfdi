@@ -11,16 +11,13 @@
        
 	<link  rel="stylesheet" href="{{ STATIC_ROOT }}css/bootstrap.css" >
 	<link  rel="stylesheet" href="{{ STATIC_ROOT }}css/main.css">
-	<script src="{{ STATIC_ROOT }}js/modernizr-2.6.2.min.js"></script>
+		<script src="{{ STATIC_ROOT }}js/modernizr-2.6.2.min.js"></script>
     <script src="{{ STATIC_ROOT }}js/bootstrap.js"></script>
-          <script src="{{ STATIC_ROOT }}js/plugins.js"></script>
-          <script src="{{ STATIC_ROOT }}js/main.js"></script>
-          <script src="{{ STATIC_ROOT }}js/jquery-1.10.1.min.js"></script>
-           <script src="{{ STATIC_ROOT }}js/bootstrap.file-input.js"></script>
-
-  
-
-</head>
+    <script src="{{ STATIC_ROOT }}js/plugins.js"></script>
+    <script src="{{ STATIC_ROOT }}js/main.js"></script>
+    <script src="{{ STATIC_ROOT }}js/jquery-1.10.1.min.js"></script>
+    <script src="{{ STATIC_ROOT }}js/bootstrap.file-input.js"></script>
+	</head>
 <body>
 
 <!-- Tabs -->
@@ -31,7 +28,7 @@
             
             <ul class="nav nav-tabs">
 
-             <li class="active"><a href="#tab1" data-toggle="tab">validador</a></li>
+             <li class="active"><a href="#tab1" data-toggle="tab">Validador</a></li>
              <li><a href="#tab2" data-toggle="tab">Cadena</a></li>
              <li><a href="#tab3" data-toggle="tab">Sello</a></li>
 
@@ -44,7 +41,7 @@
                 <div class="tab-pane color1" id="tab2">
                    
                 </div>
-                <div class="tab-pane color1" id="tab3">
+                <div class="tab-pane " id="tab3">
                   
                 </div>
 
@@ -53,8 +50,6 @@
     </div>
 
         </div>
-</div>
-
 
 <script>
 $( "#tab1" ).load( "/validadorcfdi/", function( response, status, xhr ) {

@@ -6,6 +6,7 @@ import datetime
 import time
 from django.utils import timezone
 #from apps.invoicing.util import FileManager
+
 #from apps.invoicing.util import pycripto_function_dec
 import pprint
 import hashlib
@@ -2001,7 +2002,11 @@ class AmountValidator():
       'message' : message
     }
     
+<<<<<<< HEAD
     return data 
     
 
 
+=======
+    return data 
+>>>>>>> 3244379293c318fbe7fd7ad6a80c4c7ad797ee11
