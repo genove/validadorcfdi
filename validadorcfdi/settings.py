@@ -53,8 +53,7 @@ USE_TZ = True
 # Example: "/home/media/media.lawrence.com/media/"
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
-MEDIA_ROOT = os.path.join(PROJECT_DIR,'../template/')
-MEDIA_URL = '../template'
+
 
 STATIC_ROOT = os.path.join(PROJECT_DIR,'../static/')
 STATIC_URL = '../static/'

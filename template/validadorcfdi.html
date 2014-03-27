@@ -16,48 +16,48 @@
 
 function seleccionar()
 {
-	//selecciono todos los 'inputs'
-	var allinputs = document.getElementsByTagName("input");
-	//creo un array para almacenar solo los inputs que voy a utilizar
-	var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
-	//recorro todos los input s recogidos
-	for(i=0; i<allinputs.length; i++)
-	{
-		//extraigo los inputs con la clase especifica para subir archivos
-		if (allinputs[i].className == "up")
-		{
-			//aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
-			inputs[j] = allinputs[i];
-			j++; //incremento el apuntador para el proximo input a almacenar
-		}
-	
+  //selecciono todos los 'inputs'
+  var allinputs = document.getElementsByTagName("input");
+  //creo un array para almacenar solo los inputs que voy a utilizar
+  var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  //recorro todos los input s recogidos
+  for(i=0; i<allinputs.length; i++)
+  {
+    //extraigo los inputs con la clase especifica para subir archivos
+    if (allinputs[i].className == "up")
+    {
+      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+      inputs[j] = allinputs[i];
+      j++; //incremento el apuntador para el proximo input a almacenar
+    }
+  
 }
-	comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+  comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
 
 
-}	
+} 
 
 function seleccionardos()
 {
-	//selecciono todos los 'inputs'
-	var allinputs = document.getElementsByTagName("input");
-	//creo un array para almacenar solo los inputs que voy a utilizar
-	var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
-	//recorro todos los inputs recogidos
-	for(i=0; i<allinputs.length; i++)
-	{
-		//extraigo los inputs con la clase especifica para subir archivos
-		if (allinputs[i].className == "upco")
-		{
-			//aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
-			inputs[j] = allinputs[i];
-			j++; //incremento el apuntador para el proximo input a almacenar
-		}
-	
+  //selecciono todos los 'inputs'
+  var allinputs = document.getElementsByTagName("input");
+  //creo un array para almacenar solo los inputs que voy a utilizar
+  var inputs = new Array(); var j2 = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  //recorro todos los inputs recogidos
+  for(i2=0; i2<allinputs.length; i2++)
+  {
+    //extraigo los inputs con la clase especifica para subir archivos
+    if (allinputs[i2].className == "upco")
+    {
+      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+      inputs[j2] = allinputs[i2];
+      j2++; //incremento el apuntador para el proximo input a almace
+    }
+  
 }
-	comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+  comprobacionCER(inputs); //llamada a la funcion que comprueba los inputs en cuestion
 
-}	
+} 
 
 function seleccionartres()
 {
@@ -81,42 +81,73 @@ function seleccionartres()
 
 } 
 
-function comprobacion(iarray,archivo,archivodos,archivotres)
+function comprobacion(iarray,archivo,archivotres)
 
-{	
-	for(m=0; m < iarray.length; m++) //recorro el array con los inputs
-	{
-		var ca1 = iarray[m].value; //tomo el valor del primer input
-		var s = ca1.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
-		var miarr = new Array("xml"); //Declaro un array con las extensiones permitidas 
-		
+{ 
+  for(m=0; m < iarray.length; m++) //recorro el array con los inputs
+  {
+    var ca1 = iarray[m].value; //tomo el valor del primer input
+    var s = ca1.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
+    var miarr = new Array("xml"); //Declaro un array con las extensiones permitidas 
+    
 
 
-for	(i = 0; i < miarr.length; i++) //bucle en el que compruebo las extensiones permitidas
-		{
-			var charfind = ca1.substr(s+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
-			charfind = charfind.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
-			if(charfind == miarr[i]) //compruebo la extencion obtenida con las permitidas
-			{
-				//alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
-				iarray[m].style.border = 'inherit'; //limpio bordes por si es la segunda ejecucion
-				iarray[m].style.color = 'black'; //limpio el color de letra por si es la segunda ejecucion
-				break; //termino blucle
-			}
-	if(i == miarr.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
-			{
-				iarray[m].style.border = '5px solid green'; //remarco el borde del elemento mal
-				iarray[m].style.color = 'red'; //remarco fuente del elemento malo
-				alert("¡Has introducido una extension erronea!" ) //+ (m+1)); //envio alerta
-			}
-		
+for (i = 0; i < miarr.length; i++) //bucle en el que compruebo las extensiones permitidas
+    {
+      var charfind = ca1.substr(s+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
+      charfind = charfind.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
+      if(charfind == miarr[i]) //compruebo la extencion obtenida con las permitidas
+      {
+        //alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
+        
+        break; //termino blucle
+      }
+  if(i == miarr.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
+      {
+        
+        alert("Has introducido una extension erronea en el archivo marcado " ) //+ (m+1)); //envio alerta
+      }
+    
 
         }
-	}
+  }
+}
+
+function comprobacionCER(iarrayc,archivodos)
+
+{ 
+  for(m2=0; m2 < iarrayc.length; m2++) //recorro el array con los inputs
+  {
+
+    var ca2 = iarrayc[m2].value; //tomo el valor del primer input
+    var s2 = ca2.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
+    var miarr2 = new Array("cer"); //Declaro un array con las extensiones permitidas 
+   
+
+
+for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extensiones permitidas
+    {
+      var charfind2 = ca2.substr(s2+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
+      charfind2 = charfind2.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
+      if(charfind2 == miarr2[i2]) //compruebo la extencion obtenida con las permitidas
+      {
+        
+        alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
+        break; //termino blucle
+      }
+  if(i2 == miarr2.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
+      {
+       
+        alert("Has introducido una extension erronea en el archivo marcado cer " ) //+ (m+1)); //envio alerta
+      }
+    
+
+        }
+  }
 }
 
 function comprobar(){
-		
+    
 
                if (document.formulario.archivo.value=="" && document.formulario.archivodos.value=="")
                 {
@@ -125,13 +156,13 @@ function comprobar(){
 else {
           
 
-               if(document.formulario.archivo.value==""){
-			alert("Le falta ingresar su Comprobante!");
-		}
+               if(document.formulario.archivo.value=="" ){
+      alert("Le falta ingresar su Comprobante!");
+    }
 
                 if(document.formulario.archivodos.value==""){
-			alert("Le falta ingresar su Certificado PAC!");
-		}
+      alert("Le falta ingresar su Certificado PAC!");
+    }
 
 }
 
@@ -148,8 +179,10 @@ Valida tus XML, FINKOK le dira si su XML tiene errorres y le<br>mostrara un repo
  
 <form name="formulario">
 <align="center"><align="center">&nbsp;&nbsp;Comprobante:&nbsp;&nbsp;<align="center"><input type="file" id="archivo" class="up" onChange="seleccionar()" ><br>
+
 <align="center"><align="center"><br/>Certificado PAC:&nbsp;&nbsp;<align="center"><input type="file" id="archivodos" onChange="seleccionardos()" class="upco" />
 <p align="center">
+
     <br><input type="button" value="Validar" onClick="comprobar()" align="center" class="btn btn-success"> 
 </form>
 <br />
