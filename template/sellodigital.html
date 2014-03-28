@@ -1,5 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script language="javascripta"> 
+
+
+function seleccionarcuatro()
+{
+  //selecciono todos los 'inputs'
+  var allinputs = document.getElementsByTagName("input");
+  //creo un array para almacenar solo los inputs que voy a utilizar
+  var inputs = new Array(); var j2 = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  //recorro todos los inputs recogidos
+  for(i2=0; i2<allinputs.length; i2++)
+  {
+    //extraigo los inputs con la clase especifica para subir archivos
+    if (allinputs[i2].className == "upfill")
+    {
+      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+      inputs[j2] = allinputs[i2];
+      j2++; //incremento el apuntador para el proximo input a almace
+    }
+  
+}
+  comprobacionkey(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+
+} 
+
+
+function comprobacionkey(iarraycc,archivocuatro)
+
+{ 
+  for(m2=0; m2 < iarraycc.length; m2++) //recorro el array con los inputs
+  {
+
+    var ca2 = iarraycc[m2].value; //tomo el valor del primer input
+    var s2 = ca2.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
+    var miarr2 = new Array("key"); //Declaro un array con las extensiones permitidas 
+   
+
+
+for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extensiones permitidas
+    {
+      var charfind2 = ca2.substr(s2+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
+      charfind2 = charfind2.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
+      if(charfind2 == miarr2[i2]) //compruebo la extencion obtenida con las permitidas
+      {
+        
+        alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
+        break; //termino blucle
+      }
+  if(i2 == miarr2.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
+      {
+       
+        alert("Has introducido una extension erronea en el archivo marcado" ) //+ (m+1)); //envio alerta
+      }
+    
+
+        }
+  }
+}
+
+
+function seleccionarcinco()
+{
+  //selecciono todos los 'inputs'
+  var allinputs = document.getElementsByTagName("input");
+  //creo un array para almacenar solo los inputs que voy a utilizar
+  var inputs = new Array(); var j2 = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  //recorro todos los inputs recogidos
+  for(i2=0; i2<allinputs.length; i2++)
+  {
+    //extraigo los inputs con la clase especifica para subir archivos
+    if (allinputs[i2].className == "upf")
+    {
+      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+      inputs[j2] = allinputs[i2];
+      j2++; //incremento el apuntador para el proximo input a almace
+    }
+  
+}
+  comprobacioncer(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+
+} 
+
+
+function comprobacioncer(iarrayr,archivocinco)
+
+{ 
+  for(m2=0; m2 < iarrayr.length; m2++) //recorro el array con los inputs
+  {
+
+    var ca2 = iarrayr[m2].value; //tomo el valor del primer input
+    var s2 = ca2.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
+    var miarr2 = new Array("cer"); //Declaro un array con las extensiones permitidas 
+   
+
+
+for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extensiones permitidas
+    {
+      var charfind2 = ca2.substr(s2+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
+      charfind2 = charfind2.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
+      if(charfind2 == miarr2[i2]) //compruebo la extencion obtenida con las permitidas
+      {
+        
+        alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
+        break; //termino blucle
+      }
+  if(i2 == miarr2.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
+      {
+       
+        alert("Has introducido una extension erronea en el archivo marcado" ) //+ (m+1)); //envio alerta
+      }
+    
+
+        }
+  }
+}
+
+
+function comprobarca(){
+    
+
+           if (document.formulariocadena.archivotres.value=="")
+              {
+            alert("Usted no ha ingresado ningun archvo! ");
+}
+
+}
+  
+</script>
 
 <body >
 
@@ -23,7 +151,8 @@
           
         </script>
 
-          KEY: <input type="file" class="filestyle" data-classButton="btn btn-primary">
+          KEY: <input type="file" id="archivocuatro" class="upfill" onChange="seleccionarcuatro()" >
+
            <br>
             <br>
             
@@ -47,7 +176,7 @@
         <p align="center"><textarea  class="form-control" rows="3"></textarea></p>
       
 
-        CER:<input type="file">
+        CER:<input type="file" id="archivocinco" onChange="seleccionarcinco()" class="upf" />
         <br><br>
         <p alig="center"><input  type="button" value="Validar"  class="btn btn-success"/>
           

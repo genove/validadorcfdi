@@ -59,29 +59,9 @@ function seleccionardos()
 
 } 
 
-function seleccionartres()
-{
-  //selecciono todos los 'inputs'
-  var allinputs = document.getElementsByTagName("input");
-  //creo un array para almacenar solo los inputs que voy a utilizar
-  var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
-  //recorro todos los inputs recogidos
-  for(i=0; i<allinputs.length; i++)
-  {
-    //extraigo los inputs con la clase especifica para subir archivos
-    if (allinputs[i].className == "upfil")
-    {
-      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
-      inputs[j] = allinputs[i];
-      j++; //incremento el apuntador para el proximo input a almacenar
-    }
-  
-}
-  comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
 
-} 
 
-function comprobacion(iarray,archivo,archivotres)
+function comprobacion(iarray,archivo)
 
 { 
   for(m=0; m < iarray.length; m++) //recorro el array con los inputs
@@ -168,6 +148,9 @@ else {
 
 }
 
+
+
+
 </script> 
 <div>
  <center>
@@ -193,8 +176,9 @@ Valida tus XML, FINKOK le dira si su XML tiene errorres y le<br>mostrara un repo
 </div>
 </body> 
 <br>
+
 <div>
-  <table width="auto" border="1" bordercolor="ececec" align="center" table="table" class="table table-hover" rules="all" bgcolor="dbdbdb">   
+  <table  border="1" bordercolor="ececec" align="center" table="table" class="table table-hover" rules="all" bgcolor="dbdbdb">   
 <tr>
   <td height="48" colspan="2" bgcolor="#32CD32"><div align="center"><font size="+2">REPORTE DE VALIDACION</div></td>
 </tr>
