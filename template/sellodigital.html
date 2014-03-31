@@ -117,16 +117,24 @@ for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extension
 }
 
 
-function comprobarca(){
-    
+function crearsello(){
 
-           if (document.formulariocadena.archivotres.value=="")
-              {
-            alert("Usted no ha ingresado ningun archvo! ");
-}
-
+  if (document.formulariosello.archivocuatro.value=="" )
+    {
+      alert("ingresa la llave");
+    }
+   
 }
   
+  function validarsello(){
+
+  if (document.formulariosello.archivocinco.value=="" )
+    {
+      alert("ingresa tu certificado");
+    }
+   }
+
+
 </script>
 
 <body >
@@ -150,6 +158,7 @@ function comprobarca(){
           $(":file").filestyle({classButton: "btn btn-primary"});
           
         </script>
+<form name="formulariosello">
 
           KEY: <input type="file" id="archivocuatro" class="upfill" onChange="seleccionarcuatro()" >
 
@@ -159,7 +168,7 @@ function comprobarca(){
           &nbsp;&nbsp;Pass: <input type="text">
             <br>
              &nbsp;&nbsp;
-          <p align="center"><input type="button" value="Crear"  class="btn btn-success "/>
+          <p align="center"><input type="button" value="Crear"  class="btn btn-success " onClick="crearsello()"/>
           <br><br>
            &nbsp;&nbsp;
           <textarea class="form-control" rows="3"></textarea>
@@ -178,8 +187,8 @@ function comprobarca(){
 
         CER:<input type="file" id="archivocinco" onChange="seleccionarcinco()" class="upf" />
         <br><br>
-        <p alig="center"><input  type="button" value="Validar"  class="btn btn-success"/>
-          
+        <p alig="center"><input  type="button" value="Validar"  class="btn btn-success" onClick="validarsello()"/>
+  </form>
           </center>
     </div>
 

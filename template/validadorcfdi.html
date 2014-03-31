@@ -128,19 +128,18 @@ for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extension
 
 function comprobar(){
     
+  if (document.formulario.archivo.value=="" && document.formulario.archivodos.value=="")
 
-               if (document.formulario.archivo.value=="" && document.formulario.archivodos.value=="")
-                {
-                        alert("Usted no ha ingresado ningun archvo! ");
-                }
+    {
+      alert("Usted no ha ingresado ningun archivo! ");
+    }
 else {
-          
 
-               if(document.formulario.archivo.value=="" ){
+  if(document.formulario.archivo.value=="" ){
       alert("Le falta ingresar su Comprobante!");
     }
 
-                if(document.formulario.archivodos.value==""){
+  if(document.formulario.archivodos.value==""){
       alert("Le falta ingresar su Certificado PAC!");
     }
 
@@ -178,7 +177,7 @@ Valida tus XML, FINKOK le dira si su XML tiene errorres y le<br>mostrara un repo
 <br>
 
 <div>
-  <table  border="1" bordercolor="ececec" align="center" table="table" class="table table-hover" rules="all" bgcolor="dbdbdb">   
+  <table width="100" border="1" bordercolor="ececec" align="center" table="table" class="table table-hover" rules="all" bgcolor="dbdbdb">   
 <tr>
   <td height="48" colspan="2" bgcolor="#32CD32"><div align="center"><font size="+2">REPORTE DE VALIDACION</div></td>
 </tr>

@@ -4,28 +4,29 @@
 </head>
 <body>
   <br><br>
-  <script language="javascripta"> 
+   <script language="javascript"> 
+
 
 
 function seleccionartres()
 {
   //selecciono todos los 'inputs'
-  var allinputs = document.getElementsByTagName("input");
+  var allinput = document.getElementsByTagName("input");
   //creo un array para almacenar solo los inputs que voy a utilizar
-  var inputs = new Array(); var j2 = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  var input = new Array(); var j2 = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
   //recorro todos los inputs recogidos
-  for(i2=0; i2<allinputs.length; i2++)
+  for(i2=0; i2<allinput.length; i2++)
   {
     //extraigo los inputs con la clase especifica para subir archivos
-    if (allinputs[i2].className == "upfil")
+    if (allinput[i2].className == "upfill")
     {
       //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
-      inputs[j2] = allinputs[i2];
+      input[j2] = allinput[i2];
       j2++; //incremento el apuntador para el proximo input a almace
     }
   
 }
-  comprobacioncad(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+  comprobacioncad(input); //llamada a la funcion que comprueba los inputs en cuestion
 
 } 
 
@@ -55,7 +56,7 @@ for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extension
   if(i2 == miarr2.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
       {
        
-        alert("Has introducido una extension erronea en el archivo marcado" ) //+ (m+1)); //envio alerta
+        alert("Has introducido una extension erronea en el archivo marcado" ); //+ (m+1)); //envio alerta
       }
     
 
@@ -63,47 +64,53 @@ for (i2 = 0; i2 < miarr2.length; i2++) //bucle en el que compruebo las extension
   }
 }
 
-function comprobarca(){
-    
 
-           if (document.formulariocadena.archivotres.value=="")
-              {
-            alert("Usted no ha ingresado ningun archvo! ");
+function cad(){
+
+  if (document.formulariocadena.archivotres.value=="")
+    {
+      alert("Usted no ha ingresado ningun arch8ivo!");
+    }
+   
+
 }
 
-}
   
 </script>
 
 <div id="show"><!--<table align="center" width="auto" height="auto" border="0" bordercolor=silver>-->
    <p align="center">
-
+<form name="formulariocadena">
 <p align="center">
  XML: 
-<input type="file" id="archivotres" onChange="seleccionartres()" class="upfil" />
+<input type="file" id="archivotres" onChange="seleccionartres()" class="upfill" />
   <title></title>
 </head>
-
-<form name="formulariocadena">
-
 <body>
+
+
+
+
 <div id="show"><table align="center" width="auto" height="auto" border="0" bordercolor=silver>
 
 <p align="center">
 <align="center">
-                <br />
-              <br />
-              <center>
-<input type="button" value="Validar" onClick="comprobarca()" align="center" class="btn btn-success"> 
-              <form name="select_all">
-              </form></center>
-                </p>
+<br />
+<br />
+<center>
+
+<input type="button" value="Crear" onClick="cad()" align="center" class="btn btn-success"> 
+            
+  <form name="select_all">
+  </form></center>
+  </p>
            
 <!--</table>--></div>
 <p align="center">
 <align="center">
         <textarea class="form-control" readonly type="text" cols="60" rows="10" name="Text1" id="Text1" value="" ></textarea> 
         </form>
+
         <br><input value="Seleccionar texto" onclick="javascript:this.form.Text1.focus();this.form.Text1.select();" type="button" class="btn btn-success"/>
 
                 </p>
