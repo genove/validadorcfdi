@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-
-<body >
-
-  <div class="container">
-   <div class="row">
-
-   
-    <div class="col-xs-6 color1" >
-      <center>
-      <br><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-       Cadena:
-        <br>
-         &nbsp;&nbsp;
-         <textarea class="form-control" rows="3"></textarea>
+<head>
+  <body >
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 color1" >
+          <center>
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Cadena:
+            <br>
+            &nbsp;&nbsp;
+            <textarea class="form-control" rows="3"></textarea>
           </center>
-         <br>
+          <br>
           &nbsp;&nbsp;
           <script>
           $(":file").filestyle({classButton: "btn btn-primary"});
-          
-        </script>
-<form name="formulariosello">
-
-          KEY: <input type="file" id="archivocuatro" class="upfill" onChange="seleccionarcuatro()" >
-
-           <br>
+          </script>
+          <form name="formulariosello">
+            KEY: <input type="file" id="archivocuatro" class="upfill" onChange="seleccionarcuatro()" >
             <br>
-            
-          &nbsp;&nbsp;Pass: <input type="text">
             <br>
-             &nbsp;&nbsp;
-          <p align="center"><input type="button" value="Crear"  class="btn btn-success " onClick="crearsello()"/>
-          <br><br>
-           &nbsp;&nbsp;
-          <textarea class="form-control" rows="3"></textarea>
-       
-       
-    </div>
-    
-    <div class="col-xs-6 color1"> 
-      <center>
-      <br><br>
-      &nbsp;&nbsp;
-       Sello:
-    <br><br>
-        <p align="center"><textarea  class="form-control" rows="3"></textarea></p>
-      
-
-        CER:<input type="file" id="archivocinco" onChange="seleccionarcinco()" class="upf" />
-        <br><br>
-        <p alig="center"><input  type="button" value="Validar"  class="btn btn-success" onClick="validarsello()"/>
-  </form>
-          </center>
-    </div>
-
+            &nbsp;&nbsp;Pass: <input type="text">
+            <br>
+            &nbsp;&nbsp;
+            <p align="center"><input type="button" value="Crear"  class="btn btn-success " onClick="crearsello()"></p>
+            <br><br>
+            &nbsp;&nbsp;
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <div class="col-xs-6 color1"> 
+            <center>
+              <br><br>
+              &nbsp;&nbsp;
+              Sello:
+              <br><br>
+              <p align="center"><textarea  class="form-control" rows="3"></textarea></p>
+               <br> <br>
+              CER:<input type="file" id="archivocinco" onChange="seleccionarcinco()" class="upf" />
+              <br><br>
+              <p alig="center"><input  type="button" value="Validar"  class="btn btn-success" onClick="validarsello()"/>
+            </center>
+          </form>
+        </div>
+      </div>
    </div>
- </div>
-
-
-
 
 </body>
 </head>
